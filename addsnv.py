@@ -96,7 +96,7 @@ def countBaseAtPos(bamfile,chrom,pos):
     for line in pout:
         try:
             c = line.strip().split()
-            assert len(c) > 5
+            assert len(c) >= 5
             pileup = c[4].upper()
         except AssertionError:
             print "mpileup failed, no coverage for base:",chrom,pos
